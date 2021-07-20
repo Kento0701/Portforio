@@ -1,0 +1,36 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+.keyvisual{
+    &__cover{
+        margin: 0px 40px;
+    }
+    &__title{
+        padding: 88px 0px 40px 72px;
+    }
+    &__subtitle{
+        padding: 0px 72px 40px 0px;
+    }
+}
+.skill{
+    &::before{
+       background-image: url(../../image/background/back-groundTablet.png);
+    }
+}
+.works{
+    &__sites{
+        &:last-of-type{
+            margin-top: 300px;
+        }
+    }
+    &__item{
+        height: 100%;
+    }
+    &__itemApp{
+        height: 100%;
+    }
+
+  
+}
