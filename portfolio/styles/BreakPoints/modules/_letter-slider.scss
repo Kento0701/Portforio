@@ -1,0 +1,50 @@
+.title-slide{
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 200;
+        opacity: 0;
+    }
+    &.inview .keyvisual__title{
+        opacity: 1;
+        @include animation($name:kf-letter-slide,$duration:1.4s,$timing-function:ease-in-out,$fill-mode:both);
+    }
+    &.inview .keyvisual__subtitle{
+        opacity: 1;
+        @include animation($name:kf-subtitle-slide,$duration:1.4s,$timing-function:ease-in-out,$fill-mode:both);
+    }
+}
+@keyframes kf-letter-slide {
+    0%{
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    50%{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    50.1%{
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+}
+@keyframes kf-subtitle-slide {
+    0%{
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+    50%{
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+    50.1%{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
