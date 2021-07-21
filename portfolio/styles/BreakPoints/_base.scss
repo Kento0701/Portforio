@@ -1,0 +1,360 @@
+//共通部分
+html{
+    line-height: 1;
+}
+body{
+font-family: 'Lato', 'Noto Sans JP',sans-serif;
+}
+img{
+    max-width: 100%;
+}
+ul,p{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    padding: 0;
+}
+a{
+    text-decoration: none !important;
+    color: $cBlack;
+}
+section,footer{
+    text-align: center;
+}
+button{
+    border: none;
+    margin: 0;
+    outline: none !important;
+}
+.mb-sm{
+    margin-bottom: 16px !important;
+}
+.mb-md{
+    margin-bottom: 40px !important;
+}
+.mb-lr{
+    margin-bottom: 80px !important;
+}
+.pb-lr{
+    padding-bottom: 80px;
+}
+.font-sm{
+    font-size: 16px;
+    color: $cBlack;
+}
+.font-md{
+    font-size: 18px;
+    color: $cBlack;
+}
+.font-lr{
+    font-size: 20px;
+    color: $cBlack;
+}
+.main-title{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    color: $cBlack;
+    padding: 80px 0;
+    margin: 0;
+}
+.navigation-font{
+    display: block;
+    color: $cBlack;
+    @extend.font-lr;
+    font-weight: 300;
+
+}
+.pc-image{
+    display: none;
+}
+.sp-image{
+    display: block;
+}
+.content-width {
+    width: 90%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+}
+.flex{
+    display: flex;
+}
+//使いまわしここまで
+
+//logo
+.logo{
+    @extend.flex;
+    align-items: center;
+    justify-content: center;
+    &__icon{
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+    &__namePc{
+        @extend.pc-image;
+    }
+    &__nameSp{
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        @extend.sp-image;
+    }
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $cAboutBackground;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 200;
+
+    &__nav{
+        display: none;
+    }
+    &__inner{
+        @extend .content-width,.flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.keyvisual{
+    width: 100%;
+    height: 334px;
+    overflow:hidden;
+    position: relative;
+    &__video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+ 
+    &__container{
+        position: absolute;
+        top: 38px;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__cover{
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: $cWhite;
+        opacity: 0.5;
+        margin: 0px 20px;
+        width: 90%;
+        height: 65%;
+        z-index: -200;
+    }
+
+    &__title{
+        font-size: 28px;
+        margin: 0;
+        padding: 80px 0px 40px 36px;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    &__subtitle{
+        padding: 0px 36px 40px 0px;
+        margin: 0;
+        @extend.font-md;
+        line-height: 1.5;
+        text-align: right;
+        font-weight: 400;
+    }
+}
+
+
+.aboutMe{
+    // @extend .content-width;
+ &__inner{
+     margin: 0 20px 80px 20px;
+     background-color: $cAboutBackground;
+ }
+ &__intro{
+    padding: 60px 20px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.7;
+    height: 100%;
+    letter-spacing: 0.07em;
+    text-align: left;
+ }
+}
+
+.skill{
+    @extend .pb-lr;
+    position: relative;
+    &::before{
+        content: "";
+        background-image: url(../../image/background/back-ground-sp.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        z-index: -100;
+    }
+    &__header{
+        @extend .content-width;
+    }
+    &__container{
+        @extend .flex;
+        flex-wrap: wrap;
+        margin: 0 20px;
+    }
+    &__myAbility{
+        flex-basis: 50%;
+        margin-bottom: 40px;
+        align-items: center;
+        &:first-of-type{
+            @extend .pc-image,.mb-md;
+        }
+        &:last-of-type{
+            flex-basis: 100%;
+            margin-bottom: 0;
+            @extend .font-sm,.sp-image;
+            line-height: 2;
+        }
+    }
+    &__title{
+        margin: 0 auto 24px auto;
+       @extend.font-lr;
+        font-weight: 600;
+    }
+    &__imageSP{
+        @extend .sp-image;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+    &__imagePC{
+        @extend .pc-image;
+    }
+}
+.works{
+    background-color: $cAboutBackground;
+    &__inner{
+        @extend .pb-lr;
+    }
+    &__header{
+        @extend .content-width;
+    }
+    &__subtitle{
+        font-weight: 400;
+        margin-bottom: 40px;
+        @extend.font-sm;
+    }
+    &__container{
+        @extend .flex;
+        flex-direction: column;
+    }
+    &__sites{
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        &:last-of-type{
+            margin-top: 40px;
+        }
+    }
+    &__item{
+        width: 100%;
+        height: 532px;
+    }
+    &__itemApp{
+        width: 100%;
+        height: 532px;
+    }
+    &__mywork{
+        width: 100%;
+        object-fit: cover;
+    }
+    &__name{
+        background-color: $cWorksTitle;
+        width: 100%;
+        height: 64px;
+        text-align: center;
+        @extend.font-sm;
+        padding: 24px 0;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+}
+.footer{
+    // @extend.content-width;
+    &__inner{
+        @extend .mb-md;
+    }
+    &__sentence{
+        @extend .font-md;
+        margin: 0 auto;
+        line-height: 1;
+    }
+    &__contents{
+        @extend .mb-md;
+    }
+    &__copyright{
+        font-size: 12px;
+        letter-spacing: 0.05em;
+    }
+    &__list{
+        @extend .mb-md;
+    }
+    &__icon{
+        width: 100%;
+        height: 100%;
+        &:first-of-type{
+            padding-bottom: 24px;
+        }
+    }
+
+}
+.image-icon{
+    &__facebook{
+    display: block;
+    width: 16%;
+    height: 16%;
+    object-fit: cover;
+    margin: 0 auto;
+    }
+    &__insta{
+        display: block;
+        width: 20%;
+        height: 20%;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+}
+
+.pageTop{
+    position: relative;
+  &__image{
+      display: block;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      position: absolute;
+      right: 20px;
+      bottom: 50px;
+      &:hover{
+          cursor: pointer;
+          opacity: 0.5;
+      }
+  }
+}
